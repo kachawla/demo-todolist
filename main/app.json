@@ -1,0 +1,120 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-05-13T23:54:19Z",
+  "sourceFile": ".radius/app.bicep",
+  "application": {
+    "resources": [
+      {
+        "appDefinitionLine": 14,
+        "connections": [
+          {
+            "direction": "Inbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Compute/containerImages/demo-image"
+          },
+          {
+            "direction": "Inbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Compute/containers/demo-todolist-frontend"
+          },
+          {
+            "direction": "Inbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Data/mySqlDatabases/mysql"
+          },
+          {
+            "direction": "Inbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Security/secrets/dbsecret"
+          }
+        ],
+        "diffHash": "sha256:44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "id": "/planes/radius/local/resourcegroups/default/providers/Applications.Core/applications/demo-todolist",
+        "name": "demo-todolist",
+        "outputResources": [],
+        "provisioningState": "Succeeded",
+        "type": "Applications.Core/applications"
+      },
+      {
+        "appDefinitionLine": 48,
+        "connections": [
+          {
+            "direction": "Outbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Applications.Core/applications/demo-todolist"
+          },
+          {
+            "direction": "Inbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Compute/containers/demo-todolist-frontend"
+          }
+        ],
+        "diffHash": "sha256:567780a55abcb0cb26712193302dbdbc79bfce48a8064a9cd827fd3ff9d39a29",
+        "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Compute/containerImages/demo-image",
+        "name": "demo-image",
+        "outputResources": [],
+        "provisioningState": "Succeeded",
+        "type": "Radius.Compute/containerImages"
+      },
+      {
+        "appDefinitionLine": 60,
+        "connections": [
+          {
+            "direction": "Outbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Data/mySqlDatabases/mysql"
+          },
+          {
+            "direction": "Outbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Applications.Core/applications/demo-todolist"
+          },
+          {
+            "direction": "Outbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Compute/containerImages/demo-image"
+          }
+        ],
+        "diffHash": "sha256:5f8c51f338cc0b25d4dec979a7cd1705975129d83f00053bc5e560e3605fc907",
+        "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Compute/containers/demo-todolist-frontend",
+        "name": "demo-todolist-frontend",
+        "outputResources": [],
+        "provisioningState": "Succeeded",
+        "type": "Radius.Compute/containers"
+      },
+      {
+        "appDefinitionLine": 21,
+        "connections": [
+          {
+            "direction": "Outbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Security/secrets/dbsecret"
+          },
+          {
+            "direction": "Outbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Applications.Core/applications/demo-todolist"
+          },
+          {
+            "direction": "Inbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Compute/containers/demo-todolist-frontend"
+          }
+        ],
+        "diffHash": "sha256:efd3108eb0319fa447fca9d9ef2d2cc684ddb475ac2b1e97b76ab4dca04c2022",
+        "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Data/mySqlDatabases/mysql",
+        "name": "mysql",
+        "outputResources": [],
+        "provisioningState": "Succeeded",
+        "type": "Radius.Data/mySqlDatabases"
+      },
+      {
+        "appDefinitionLine": 32,
+        "connections": [
+          {
+            "direction": "Outbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Applications.Core/applications/demo-todolist"
+          },
+          {
+            "direction": "Inbound",
+            "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Data/mySqlDatabases/mysql"
+          }
+        ],
+        "diffHash": "sha256:567780a55abcb0cb26712193302dbdbc79bfce48a8064a9cd827fd3ff9d39a29",
+        "id": "/planes/radius/local/resourcegroups/default/providers/Radius.Security/secrets/dbsecret",
+        "name": "dbsecret",
+        "outputResources": [],
+        "provisioningState": "Succeeded",
+        "type": "Radius.Security/secrets"
+      }
+    ]
+  }
+}
